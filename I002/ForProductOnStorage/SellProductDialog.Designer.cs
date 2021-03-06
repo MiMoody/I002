@@ -1,7 +1,7 @@
 ﻿
-namespace I002
+namespace I002.ForProductOnStorage
 {
-    partial class Products
+    partial class SellProductDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -34,81 +34,142 @@ namespace I002
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.BtnCha = new System.Windows.Forms.Button();
-            this.BtnDelete = new System.Windows.Forms.Button();
-            this.LabFind = new System.Windows.Forms.Label();
-            this.TxtFind = new System.Windows.Forms.TextBox();
-            this.tableForProducts = new System.Windows.Forms.DataGridView();
+            this.TxtQuantity = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TxtPrice = new System.Windows.Forms.TextBox();
+            this.BtnAddProduct = new System.Windows.Forms.Button();
             this.BtnAdd = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TxtFindProduct = new System.Windows.Forms.TextBox();
+            this.tableForProducts = new System.Windows.Forms.DataGridView();
             this.BtnClose = new System.Windows.Forms.Button();
-            this.CloseBtn = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableForProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // MainPanel
             // 
-            this.MainPanel.Controls.Add(this.CloseBtn);
-            this.MainPanel.Controls.Add(this.BtnCha);
-            this.MainPanel.Controls.Add(this.BtnDelete);
-            this.MainPanel.Controls.Add(this.LabFind);
-            this.MainPanel.Controls.Add(this.TxtFind);
-            this.MainPanel.Controls.Add(this.tableForProducts);
+            this.MainPanel.Controls.Add(this.TxtQuantity);
+            this.MainPanel.Controls.Add(this.label5);
+            this.MainPanel.Controls.Add(this.label4);
+            this.MainPanel.Controls.Add(this.TxtPrice);
+            this.MainPanel.Controls.Add(this.BtnAddProduct);
             this.MainPanel.Controls.Add(this.BtnAdd);
+            this.MainPanel.Controls.Add(this.label3);
+            this.MainPanel.Controls.Add(this.label2);
+            this.MainPanel.Controls.Add(this.TxtFindProduct);
+            this.MainPanel.Controls.Add(this.tableForProducts);
             this.MainPanel.Controls.Add(this.BtnClose);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(839, 522);
-            this.MainPanel.TabIndex = 1;
+            this.MainPanel.Size = new System.Drawing.Size(671, 547);
+            this.MainPanel.TabIndex = 5;
             // 
-            // BtnCha
+            // TxtQuantity
             // 
-            this.BtnCha.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnCha.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.BtnCha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCha.ForeColor = System.Drawing.Color.Black;
-            this.BtnCha.Location = new System.Drawing.Point(609, 432);
-            this.BtnCha.Name = "BtnCha";
-            this.BtnCha.Size = new System.Drawing.Size(200, 39);
-            this.BtnCha.TabIndex = 8;
-            this.BtnCha.Text = "Изменить товар";
-            this.BtnCha.UseVisualStyleBackColor = true;
-            this.BtnCha.Click += new System.EventHandler(this.BtnCha_Click);
+            this.TxtQuantity.Location = new System.Drawing.Point(224, 366);
+            this.TxtQuantity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.TxtQuantity.Name = "TxtQuantity";
+            this.TxtQuantity.Size = new System.Drawing.Size(226, 33);
+            this.TxtQuantity.TabIndex = 34;
+            this.TxtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtQuantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // BtnDelete
+            // label5
             // 
-            this.BtnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.BtnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnDelete.ForeColor = System.Drawing.Color.Black;
-            this.BtnDelete.Location = new System.Drawing.Point(315, 432);
-            this.BtnDelete.Name = "BtnDelete";
-            this.BtnDelete.Size = new System.Drawing.Size(200, 39);
-            this.BtnDelete.TabIndex = 7;
-            this.BtnDelete.Text = "Удалить товар";
-            this.BtnDelete.UseVisualStyleBackColor = true;
-            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(43, 366);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(184, 25);
+            this.label5.TabIndex = 33;
+            this.label5.Text = "Количество партий";
             // 
-            // LabFind
+            // label4
             // 
-            this.LabFind.AutoSize = true;
-            this.LabFind.Location = new System.Drawing.Point(294, 51);
-            this.LabFind.Name = "LabFind";
-            this.LabFind.Size = new System.Drawing.Size(265, 25);
-            this.LabFind.TabIndex = 6;
-            this.LabFind.Text = "Введите данные для поиска:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(58, 427);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(166, 25);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "Цена, руб.партия";
             // 
-            // TxtFind
+            // TxtPrice
             // 
-            this.TxtFind.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtFind.Location = new System.Drawing.Point(199, 84);
-            this.TxtFind.Name = "TxtFind";
-            this.TxtFind.Size = new System.Drawing.Size(447, 33);
-            this.TxtFind.TabIndex = 5;
-            this.TxtFind.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TxtFind.TextChanged += new System.EventHandler(this.TxtFind_TextChanged);
+            this.TxtPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtPrice.Location = new System.Drawing.Point(224, 422);
+            this.TxtPrice.Name = "TxtPrice";
+            this.TxtPrice.ReadOnly = true;
+            this.TxtPrice.Size = new System.Drawing.Size(226, 33);
+            this.TxtPrice.TabIndex = 31;
+            this.TxtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // BtnAddProduct
+            // 
+            this.BtnAddProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnAddProduct.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.BtnAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAddProduct.ForeColor = System.Drawing.Color.Black;
+            this.BtnAddProduct.Location = new System.Drawing.Point(224, 481);
+            this.BtnAddProduct.Name = "BtnAddProduct";
+            this.BtnAddProduct.Size = new System.Drawing.Size(226, 39);
+            this.BtnAddProduct.TabIndex = 30;
+            this.BtnAddProduct.Text = "Добавить товар";
+            this.BtnAddProduct.UseVisualStyleBackColor = true;
+            this.BtnAddProduct.Click += new System.EventHandler(this.BtnAddProduct_Click);
+            // 
+            // BtnAdd
+            // 
+            this.BtnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAdd.ForeColor = System.Drawing.Color.Black;
+            this.BtnAdd.Location = new System.Drawing.Point(769, 617);
+            this.BtnAdd.Name = "BtnAdd";
+            this.BtnAdd.Size = new System.Drawing.Size(226, 39);
+            this.BtnAdd.TabIndex = 29;
+            this.BtnAdd.Text = "Закупить товар";
+            this.BtnAdd.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(204, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(270, 25);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "Выберите товар для покупки";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(209, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(265, 25);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Введите данные для поиска:";
+            // 
+            // TxtFindProduct
+            // 
+            this.TxtFindProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtFindProduct.Location = new System.Drawing.Point(114, 103);
+            this.TxtFindProduct.Name = "TxtFindProduct";
+            this.TxtFindProduct.Size = new System.Drawing.Size(447, 33);
+            this.TxtFindProduct.TabIndex = 26;
+            this.TxtFindProduct.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtFindProduct.TextChanged += new System.EventHandler(this.TxtFindProduct_TextChanged);
             // 
             // tableForProducts
             // 
@@ -131,7 +192,7 @@ namespace I002
             this.tableForProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.tableForProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableForProducts.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tableForProducts.Location = new System.Drawing.Point(28, 130);
+            this.tableForProducts.Location = new System.Drawing.Point(67, 168);
             this.tableForProducts.MultiSelect = false;
             this.tableForProducts.Name = "tableForProducts";
             this.tableForProducts.ReadOnly = true;
@@ -151,23 +212,9 @@ namespace I002
             this.tableForProducts.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tableForProducts.RowTemplate.Height = 35;
             this.tableForProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tableForProducts.Size = new System.Drawing.Size(781, 272);
-            this.tableForProducts.TabIndex = 4;
+            this.tableForProducts.Size = new System.Drawing.Size(537, 166);
+            this.tableForProducts.TabIndex = 25;
             this.tableForProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableForProducts_CellClick);
-            // 
-            // BtnAdd
-            // 
-            this.BtnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAdd.ForeColor = System.Drawing.Color.Black;
-            this.BtnAdd.Location = new System.Drawing.Point(28, 432);
-            this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(200, 39);
-            this.BtnAdd.TabIndex = 3;
-            this.BtnAdd.Text = "Добавить товар";
-            this.BtnAdd.UseVisualStyleBackColor = true;
-            this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // BtnClose
             // 
@@ -185,36 +232,22 @@ namespace I002
             this.BtnClose.UseVisualStyleBackColor = true;
             this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // CloseBtn
-            // 
-            this.CloseBtn.BackgroundImage = global::I002.Properties.Resources.close;
-            this.CloseBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.CloseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CloseBtn.FlatAppearance.BorderSize = 0;
-            this.CloseBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.CloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CloseBtn.ForeColor = System.Drawing.Color.Black;
-            this.CloseBtn.Location = new System.Drawing.Point(788, 12);
-            this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(39, 49);
-            this.CloseBtn.TabIndex = 15;
-            this.CloseBtn.UseVisualStyleBackColor = true;
-            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
-            // 
-            // Products
+            // SellProductDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 522);
+            this.ClientSize = new System.Drawing.Size(671, 547);
             this.ControlBox = false;
             this.Controls.Add(this.MainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Products";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "SellProductDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Товары";
-            this.Load += new System.EventHandler(this.Products_Load);
+            this.Text = "Выберите продукт";
+            this.Load += new System.EventHandler(this.SellProductDialog_Load);
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtQuantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableForProducts)).EndInit();
             this.ResumeLayout(false);
 
@@ -223,13 +256,16 @@ namespace I002
         #endregion
 
         private System.Windows.Forms.Panel MainPanel;
+        private System.Windows.Forms.Button BtnAddProduct;
         private System.Windows.Forms.Button BtnAdd;
-        private System.Windows.Forms.Button BtnClose;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TxtFindProduct;
         private System.Windows.Forms.DataGridView tableForProducts;
-        private System.Windows.Forms.Label LabFind;
-        private System.Windows.Forms.TextBox TxtFind;
-        private System.Windows.Forms.Button BtnCha;
-        private System.Windows.Forms.Button BtnDelete;
-        private System.Windows.Forms.Button CloseBtn;
+        private System.Windows.Forms.Button BtnClose;
+        private System.Windows.Forms.NumericUpDown TxtQuantity;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox TxtPrice;
     }
 }

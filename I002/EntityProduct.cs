@@ -54,7 +54,16 @@ namespace I002
                     SqlCommand AddProduct = new SqlCommand(query, conn);
                     AddProduct.Parameters.AddWithValue(@"Name", name);
                     AddProduct.Parameters.AddWithValue(@"Rem", 0);
-                    AddProduct.ExecuteNonQuery();
+                    try
+                    {
+                        AddProduct.ExecuteNonQuery();
+                        MessageBox.Show("Продукт успешно добавлен!");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Такой продукт уже существует!");
+                    }
+                   
                 }
                 catch (Exception ex)
                 {

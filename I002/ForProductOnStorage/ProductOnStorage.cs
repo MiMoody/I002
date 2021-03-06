@@ -12,7 +12,6 @@ namespace I002
 {
     public partial class ProductOnStorage : Form
     {
-        string IDProduct = null,NameProduct = null, Quantity= null, Price = null;
         public ProductOnStorage()
         {
             InitializeComponent();
@@ -34,38 +33,33 @@ namespace I002
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
+            this.Visible = false;
             BuyProduct product = new BuyProduct();
-            product.ShowDialog();
+            product.Show();
             EntityProductOnStorage entityProduct = new EntityProductOnStorage();
             entityProduct.ReadProduct(tableForProducts);
 
         }
 
-        private void tableForProducts_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                IDProduct = tableForProducts[1, e.RowIndex].Value.ToString();
-                NameProduct = tableForProducts[2, e.RowIndex].Value.ToString();
-                Quantity = tableForProducts[3, e.RowIndex].Value.ToString();
-                Price = tableForProducts[4, e.RowIndex].Value.ToString();
-            }
-            catch
-            {
-                IDProduct = null;
-            }
-        }
-
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            if (IDProduct != null)
-            {
-                SellProductForm sellProductForm = new SellProductForm(IDProduct,NameProduct, Quantity, Price);
-                sellProductForm.ShowDialog();
-                EntityProductOnStorage entityProduct = new EntityProductOnStorage();
-                entityProduct.ReadProduct(tableForProducts);
-            }
-            else { MessageBox.Show("Вы не выбрали товар!\n\nНажмите на нужную запись в талице!"); }
+            this.Visible = false;
+            SellProductForm sellProductForm = new SellProductForm();
+            sellProductForm.Show();
+            EntityProductOnStorage entityProduct = new EntityProductOnStorage();
+            entityProduct.ReadProduct(tableForProducts);
+           
+        }
+
+        private void TxtFind_TextChanged(object sender, EventArgs e)
+        {
+            EntityProductOnStorage storage = new EntityProductOnStorage();
+            storage.FindProduct(tableForProducts, TxtFind.Text);
+        }
+
+        private void CloseBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -12,95 +12,100 @@ namespace I002
 {
     public partial class BuyProduct : Form
     {
-        string IDCounteragent = null, IDProduct = null;
+        string IDCounteragent = null;
         public BuyProduct()
         {
             InitializeComponent();
+            Program.DialogProduct = this;
+            tableForProducts.Columns[1].ReadOnly = true;
         }
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+            GC.Collect();
+            ProductOnStorage product = new ProductOnStorage();
+            product.Visible = true ;
         }
 
-       
+       public void ReadCounteragent(string counteragent,string surname, string name, string middleName, string Inn)
+        {
+            if(counteragent!=null)
+            {
+                TxtCounteeragent.Text = "";
+                IDCounteragent = counteragent;
+                TxtCounteeragent.Text += surname + " ";
+                TxtCounteeragent.Text += name + " ";
+                TxtCounteeragent.Text += middleName + "  ИНН:";
+                TxtCounteeragent.Text += Inn;
+            }
+            
+        }
 
         private void BuyProduct_Load(object sender, EventArgs e)
         {
-            EntityCounteragent entityCounteragent = new EntityCounteragent();
-            entityCounteragent.ReadCounteragent(tableForCounteragents, 1);
-            EntityProduct entityProduct = new EntityProduct();
-            entityProduct.ReadProduct(tableForProducts);
-        }
-
-        private void TxtFindCounteragent_TextChanged(object sender, EventArgs e)
-        {
-            EntityCounteragent entityCounteragent = new EntityCounteragent();
-            entityCounteragent.FindCounteragent(tableForCounteragents, 1, TxtFindCounteragent.Text);
-        }
-
-        private void TxtFindProduct_TextChanged(object sender, EventArgs e)
-        {
-            EntityProduct entityProduct = new EntityProduct();
-            entityProduct.FindProduct(tableForProducts, TxtFindProduct.Text);
+           
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            int Quantity;
-            double Price;
+          
             if (IDCounteragent != null)
             {
-                if (IDProduct!=null)
+                if (tableForProducts.Rows.Count>0)
                 {
-                    try
-                    {
-                        Quantity = Convert.ToInt32(TxtQuantity.Text);
-                        try
-                        {
-                            Price = Convert.ToDouble(TxtPrice.Text);
-
-                            EntityProductOnStorage productOnStorage = new EntityProductOnStorage();
-                            productOnStorage.BuyProduct(IDCounteragent,IDProduct,Price,Quantity);
-                        }
-                        catch { MessageBox.Show("Введите корректную цену товара!"); }
-
-                    }
-                    catch { MessageBox.Show("Введите корректное количество товара!"); }
+                    EntityProductOnStorage storage = new EntityProductOnStorage();
+                    storage.BuyProduct(IDCounteragent, tableForProducts);
+                    this.Close();
+                    GC.Collect();
+                    ProductOnStorage product = new ProductOnStorage();
+                    product.Visible = true;
                 }
-                else { MessageBox.Show("Вы не выбрали товар!\n\nНажмите на соответствующую запись в таблице"); }
+                else MessageBox.Show("Вы не выбрали товар!"); 
             }
-            else { MessageBox.Show("Вы не выбрали контрагента!\n\nНажмите на соответствующую запись в таблице"); }
+            else  MessageBox.Show("Вы не выбрали контрагента!"); 
              
            
         }
 
-        private void tableForCounteragents_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void ChooseCounteragent_Click(object sender, EventArgs e)
         {
-            try
-            {
-                IDCounteragent = tableForCounteragents[0, e.RowIndex].Value.ToString();
-            }
-            catch { IDCounteragent = null; }
+            FormDialogCounteragent counteragent = new FormDialogCounteragent(1);
+            counteragent.ShowDialog();
         }
 
-        private void tableForProducts_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void BtnAddProduct_Click(object sender, EventArgs e)
         {
-            try
-            {
-                IDProduct = tableForProducts[0, e.RowIndex].Value.ToString();
-            }
-            catch { IDProduct = null; }
-        }
-
-        private void TxtPrice_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            CheckSimbol.CheckInputSimbol(sender, e);
+            FormDialogProduct product = new FormDialogProduct(tableForProducts);
+            product.ShowDialog();
         }
 
         private void TxtQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
             CheckSimbol.CheckInputSimbol(sender, e);
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            if (tableForProducts.SelectedRows.Count==1)
+            {
+                for (int i = 0;i< tableForProducts.Rows.Count;i++)
+                {
+                    if(tableForProducts.Rows[i].Selected)
+                    {
+                        tableForProducts.Rows.RemoveAt(i);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Вы не выбрали товар для удаления!");
+            }
+        }
+
+        private void CloseBtn_Click(object sender, EventArgs e)
+        {
+                Application.Exit();
         }
     }
 }

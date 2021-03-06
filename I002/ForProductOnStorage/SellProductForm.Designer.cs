@@ -33,22 +33,204 @@ namespace I002
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.BtnClose = new System.Windows.Forms.Button();
-            this.tableForCounteragents = new System.Windows.Forms.DataGridView();
-            this.TxtFindCounteragent = new System.Windows.Forms.TextBox();
-            this.LabFind = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TxtPrice = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.LabForProduct = new System.Windows.Forms.Label();
-            this.BtnAdd = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TxtCounteeragent = new System.Windows.Forms.TextBox();
+            this.ChooseCounteragent = new System.Windows.Forms.Button();
+            this.tableForProducts = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnSell = new System.Windows.Forms.Button();
+            this.BtnAddProduct = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.TxtQuantity = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.tableForCounteragents)).BeginInit();
+            this.BtnDelete = new System.Windows.Forms.Button();
+            this.BtnClose = new System.Windows.Forms.Button();
+            this.CloseBtn = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.tableForProducts)).BeginInit();
             this.MainPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtQuantity)).BeginInit();
             this.SuspendLayout();
+            // 
+            // LabForProduct
+            // 
+            this.LabForProduct.Location = new System.Drawing.Point(-5, 24);
+            this.LabForProduct.Name = "LabForProduct";
+            this.LabForProduct.Size = new System.Drawing.Size(1060, 49);
+            this.LabForProduct.TabIndex = 28;
+            this.LabForProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(168, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(503, 25);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Выберите контрагента, которому хотите продать товар";
+            // 
+            // TxtCounteeragent
+            // 
+            this.TxtCounteeragent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtCounteeragent.Location = new System.Drawing.Point(40, 96);
+            this.TxtCounteeragent.Name = "TxtCounteeragent";
+            this.TxtCounteeragent.ReadOnly = true;
+            this.TxtCounteeragent.Size = new System.Drawing.Size(671, 33);
+            this.TxtCounteeragent.TabIndex = 31;
+            this.TxtCounteeragent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ChooseCounteragent
+            // 
+            this.ChooseCounteragent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ChooseCounteragent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.ChooseCounteragent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ChooseCounteragent.ForeColor = System.Drawing.Color.Black;
+            this.ChooseCounteragent.Location = new System.Drawing.Point(717, 96);
+            this.ChooseCounteragent.Name = "ChooseCounteragent";
+            this.ChooseCounteragent.Size = new System.Drawing.Size(61, 34);
+            this.ChooseCounteragent.TabIndex = 32;
+            this.ChooseCounteragent.Text = "...";
+            this.ChooseCounteragent.UseVisualStyleBackColor = true;
+            this.ChooseCounteragent.Click += new System.EventHandler(this.ChooseCounteragent_Click);
+            // 
+            // tableForProducts
+            // 
+            this.tableForProducts.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.tableForProducts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tableForProducts.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.tableForProducts.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableForProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.tableForProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableForProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.nameP,
+            this.price,
+            this.quantity});
+            this.tableForProducts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tableForProducts.Location = new System.Drawing.Point(37, 188);
+            this.tableForProducts.MultiSelect = false;
+            this.tableForProducts.Name = "tableForProducts";
+            this.tableForProducts.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableForProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.tableForProducts.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.tableForProducts.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.tableForProducts.RowTemplate.Height = 35;
+            this.tableForProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tableForProducts.Size = new System.Drawing.Size(737, 166);
+            this.tableForProducts.TabIndex = 33;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "IdProduct";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.Visible = false;
+            this.id.Width = 228;
+            // 
+            // nameP
+            // 
+            this.nameP.FillWeight = 280.7487F;
+            this.nameP.HeaderText = "Название";
+            this.nameP.MinimumWidth = 6;
+            this.nameP.Name = "nameP";
+            this.nameP.Width = 228;
+            // 
+            // price
+            // 
+            this.price.FillWeight = 1.16321F;
+            this.price.HeaderText = "Цена,руб. партия";
+            this.price.MinimumWidth = 6;
+            this.price.Name = "price";
+            this.price.Width = 228;
+            // 
+            // quantity
+            // 
+            this.quantity.FillWeight = 18.08813F;
+            this.quantity.HeaderText = "Количество";
+            this.quantity.MinimumWidth = 6;
+            this.quantity.Name = "quantity";
+            this.quantity.Width = 228;
+            // 
+            // BtnSell
+            // 
+            this.BtnSell.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSell.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.BtnSell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSell.ForeColor = System.Drawing.Color.Black;
+            this.BtnSell.Location = new System.Drawing.Point(280, 402);
+            this.BtnSell.Name = "BtnSell";
+            this.BtnSell.Size = new System.Drawing.Size(226, 39);
+            this.BtnSell.TabIndex = 34;
+            this.BtnSell.Text = "Продать";
+            this.BtnSell.UseVisualStyleBackColor = true;
+            this.BtnSell.Click += new System.EventHandler(this.BtnSell_Click);
+            // 
+            // BtnAddProduct
+            // 
+            this.BtnAddProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnAddProduct.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.BtnAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAddProduct.ForeColor = System.Drawing.Color.Black;
+            this.BtnAddProduct.Location = new System.Drawing.Point(37, 144);
+            this.BtnAddProduct.Name = "BtnAddProduct";
+            this.BtnAddProduct.Size = new System.Drawing.Size(204, 34);
+            this.BtnAddProduct.TabIndex = 35;
+            this.BtnAddProduct.Text = "Добавить товар";
+            this.BtnAddProduct.UseVisualStyleBackColor = true;
+            this.BtnAddProduct.Click += new System.EventHandler(this.BtnAddProduct_Click);
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.Controls.Add(this.CloseBtn);
+            this.MainPanel.Controls.Add(this.BtnDelete);
+            this.MainPanel.Controls.Add(this.BtnAddProduct);
+            this.MainPanel.Controls.Add(this.BtnSell);
+            this.MainPanel.Controls.Add(this.tableForProducts);
+            this.MainPanel.Controls.Add(this.ChooseCounteragent);
+            this.MainPanel.Controls.Add(this.TxtCounteeragent);
+            this.MainPanel.Controls.Add(this.label1);
+            this.MainPanel.Controls.Add(this.BtnClose);
+            this.MainPanel.Controls.Add(this.LabForProduct);
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MainPanel.Location = new System.Drawing.Point(0, 0);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(811, 470);
+            this.MainPanel.TabIndex = 4;
+            // 
+            // BtnDelete
+            // 
+            this.BtnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.BtnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDelete.ForeColor = System.Drawing.Color.Black;
+            this.BtnDelete.Location = new System.Drawing.Point(570, 148);
+            this.BtnDelete.Name = "BtnDelete";
+            this.BtnDelete.Size = new System.Drawing.Size(204, 34);
+            this.BtnDelete.TabIndex = 33;
+            this.BtnDelete.Text = "Удалить товар";
+            this.BtnDelete.UseVisualStyleBackColor = true;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // BtnClose
             // 
@@ -66,172 +248,27 @@ namespace I002
             this.BtnClose.UseVisualStyleBackColor = true;
             this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // tableForCounteragents
+            // CloseBtn
             // 
-            this.tableForCounteragents.AllowUserToAddRows = false;
-            this.tableForCounteragents.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.tableForCounteragents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.tableForCounteragents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tableForCounteragents.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.tableForCounteragents.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableForCounteragents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.tableForCounteragents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableForCounteragents.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tableForCounteragents.Location = new System.Drawing.Point(43, 215);
-            this.tableForCounteragents.MultiSelect = false;
-            this.tableForCounteragents.Name = "tableForCounteragents";
-            this.tableForCounteragents.ReadOnly = true;
-            this.tableForCounteragents.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableForCounteragents.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.tableForCounteragents.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.tableForCounteragents.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.tableForCounteragents.RowTemplate.Height = 35;
-            this.tableForCounteragents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tableForCounteragents.Size = new System.Drawing.Size(988, 206);
-            this.tableForCounteragents.TabIndex = 17;
-            this.tableForCounteragents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableForCounteragents_CellClick);
-            // 
-            // TxtFindCounteragent
-            // 
-            this.TxtFindCounteragent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtFindCounteragent.Location = new System.Drawing.Point(133, 170);
-            this.TxtFindCounteragent.Name = "TxtFindCounteragent";
-            this.TxtFindCounteragent.Size = new System.Drawing.Size(818, 33);
-            this.TxtFindCounteragent.TabIndex = 18;
-            this.TxtFindCounteragent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TxtFindCounteragent.TextChanged += new System.EventHandler(this.TxtFindCounteragent_TextChanged);
-            // 
-            // LabFind
-            // 
-            this.LabFind.AutoSize = true;
-            this.LabFind.Location = new System.Drawing.Point(421, 131);
-            this.LabFind.Name = "LabFind";
-            this.LabFind.Size = new System.Drawing.Size(265, 25);
-            this.LabFind.TabIndex = 19;
-            this.LabFind.Text = "Введите данные для поиска:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(293, 91);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(503, 25);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Выберите контрагента, которому хотите продать товар";
-            // 
-            // TxtPrice
-            // 
-            this.TxtPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtPrice.Location = new System.Drawing.Point(460, 503);
-            this.TxtPrice.Name = "TxtPrice";
-            this.TxtPrice.ReadOnly = true;
-            this.TxtPrice.Size = new System.Drawing.Size(226, 33);
-            this.TxtPrice.TabIndex = 21;
-            this.TxtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(293, 509);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(166, 25);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "Цена, руб.партия";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(278, 448);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(184, 25);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "Количество партий";
-            // 
-            // LabForProduct
-            // 
-            this.LabForProduct.Location = new System.Drawing.Point(-5, 24);
-            this.LabForProduct.Name = "LabForProduct";
-            this.LabForProduct.Size = new System.Drawing.Size(1060, 49);
-            this.LabForProduct.TabIndex = 28;
-            this.LabForProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // BtnAdd
-            // 
-            this.BtnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAdd.ForeColor = System.Drawing.Color.Black;
-            this.BtnAdd.Location = new System.Drawing.Point(460, 569);
-            this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(226, 39);
-            this.BtnAdd.TabIndex = 29;
-            this.BtnAdd.Text = "Продать товар";
-            this.BtnAdd.UseVisualStyleBackColor = true;
-            this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
-            // 
-            // MainPanel
-            // 
-            this.MainPanel.Controls.Add(this.TxtQuantity);
-            this.MainPanel.Controls.Add(this.BtnAdd);
-            this.MainPanel.Controls.Add(this.label5);
-            this.MainPanel.Controls.Add(this.label4);
-            this.MainPanel.Controls.Add(this.TxtPrice);
-            this.MainPanel.Controls.Add(this.label1);
-            this.MainPanel.Controls.Add(this.LabFind);
-            this.MainPanel.Controls.Add(this.TxtFindCounteragent);
-            this.MainPanel.Controls.Add(this.tableForCounteragents);
-            this.MainPanel.Controls.Add(this.BtnClose);
-            this.MainPanel.Controls.Add(this.LabForProduct);
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.MainPanel.Location = new System.Drawing.Point(0, 0);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1058, 658);
-            this.MainPanel.TabIndex = 4;
-            // 
-            // TxtQuantity
-            // 
-            this.TxtQuantity.Location = new System.Drawing.Point(460, 448);
-            this.TxtQuantity.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.TxtQuantity.Name = "TxtQuantity";
-            this.TxtQuantity.Size = new System.Drawing.Size(226, 33);
-            this.TxtQuantity.TabIndex = 30;
-            this.TxtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TxtQuantity.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.CloseBtn.BackgroundImage = global::I002.Properties.Resources.close;
+            this.CloseBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.CloseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CloseBtn.FlatAppearance.BorderSize = 0;
+            this.CloseBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.CloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseBtn.ForeColor = System.Drawing.Color.Black;
+            this.CloseBtn.Location = new System.Drawing.Point(735, 12);
+            this.CloseBtn.Name = "CloseBtn";
+            this.CloseBtn.Size = new System.Drawing.Size(39, 42);
+            this.CloseBtn.TabIndex = 15;
+            this.CloseBtn.UseVisualStyleBackColor = true;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
             // 
             // SellProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1058, 658);
+            this.ClientSize = new System.Drawing.Size(811, 470);
             this.ControlBox = false;
             this.Controls.Add(this.MainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -239,27 +276,29 @@ namespace I002
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Продажа товара";
             this.Load += new System.EventHandler(this.SellProductForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tableForCounteragents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableForProducts)).EndInit();
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtQuantity)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button BtnClose;
-        private System.Windows.Forms.DataGridView tableForCounteragents;
-        private System.Windows.Forms.TextBox TxtFindCounteragent;
-        private System.Windows.Forms.Label LabFind;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TxtPrice;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label LabForProduct;
-        private System.Windows.Forms.Button BtnAdd;
+        private System.Windows.Forms.Button BtnClose;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox TxtCounteeragent;
+        private System.Windows.Forms.Button ChooseCounteragent;
+        private System.Windows.Forms.DataGridView tableForProducts;
+        private System.Windows.Forms.Button BtnSell;
+        private System.Windows.Forms.Button BtnAddProduct;
         private System.Windows.Forms.Panel MainPanel;
-        private System.Windows.Forms.NumericUpDown TxtQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
+        private System.Windows.Forms.Button BtnDelete;
+        private System.Windows.Forms.Button CloseBtn;
     }
 }

@@ -34,15 +34,17 @@ namespace I002
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.LabHeader = new System.Windows.Forms.Label();
             this.tableForReport = new System.Windows.Forms.DataGridView();
             this.BtnClose = new System.Windows.Forms.Button();
+            this.LabHeader = new System.Windows.Forms.Label();
+            this.CloseBtn = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableForReport)).BeginInit();
             this.SuspendLayout();
             // 
             // MainPanel
             // 
+            this.MainPanel.Controls.Add(this.CloseBtn);
             this.MainPanel.Controls.Add(this.tableForReport);
             this.MainPanel.Controls.Add(this.BtnClose);
             this.MainPanel.Controls.Add(this.LabHeader);
@@ -50,16 +52,8 @@ namespace I002
             this.MainPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(933, 492);
+            this.MainPanel.Size = new System.Drawing.Size(856, 380);
             this.MainPanel.TabIndex = 3;
-            // 
-            // LabHeader
-            // 
-            this.LabHeader.Location = new System.Drawing.Point(0, 18);
-            this.LabHeader.Name = "LabHeader";
-            this.LabHeader.Size = new System.Drawing.Size(933, 37);
-            this.LabHeader.TabIndex = 6;
-            this.LabHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableForReport
             // 
@@ -81,7 +75,7 @@ namespace I002
             this.tableForReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.tableForReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableForReport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tableForReport.Location = new System.Drawing.Point(71, 86);
+            this.tableForReport.Location = new System.Drawing.Point(41, 67);
             this.tableForReport.MultiSelect = false;
             this.tableForReport.Name = "tableForReport";
             this.tableForReport.ReadOnly = true;
@@ -103,6 +97,7 @@ namespace I002
             this.tableForReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tableForReport.Size = new System.Drawing.Size(781, 272);
             this.tableForReport.TabIndex = 4;
+            this.tableForReport.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableForReport_CellDoubleClick);
             // 
             // BtnClose
             // 
@@ -120,11 +115,35 @@ namespace I002
             this.BtnClose.UseVisualStyleBackColor = true;
             this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
+            // LabHeader
+            // 
+            this.LabHeader.Location = new System.Drawing.Point(0, 18);
+            this.LabHeader.Name = "LabHeader";
+            this.LabHeader.Size = new System.Drawing.Size(856, 37);
+            this.LabHeader.TabIndex = 6;
+            this.LabHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CloseBtn
+            // 
+            this.CloseBtn.BackgroundImage = global::I002.Properties.Resources.close;
+            this.CloseBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.CloseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CloseBtn.FlatAppearance.BorderSize = 0;
+            this.CloseBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.CloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseBtn.ForeColor = System.Drawing.Color.Black;
+            this.CloseBtn.Location = new System.Drawing.Point(807, 17);
+            this.CloseBtn.Name = "CloseBtn";
+            this.CloseBtn.Size = new System.Drawing.Size(37, 38);
+            this.CloseBtn.TabIndex = 15;
+            this.CloseBtn.UseVisualStyleBackColor = true;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            // 
             // FormPurchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 492);
+            this.ClientSize = new System.Drawing.Size(856, 380);
             this.ControlBox = false;
             this.Controls.Add(this.MainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -144,5 +163,6 @@ namespace I002
         private System.Windows.Forms.Label LabHeader;
         private System.Windows.Forms.DataGridView tableForReport;
         private System.Windows.Forms.Button BtnClose;
+        private System.Windows.Forms.Button CloseBtn;
     }
 }

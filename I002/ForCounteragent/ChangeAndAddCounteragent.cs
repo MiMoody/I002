@@ -71,12 +71,9 @@ namespace I002
                 if (Action == 1) //Добавление пользователя
                 {
                     EntityCounteragent counteragent = new EntityCounteragent();
-                    if (!counteragent.CheckExist(TxtInn.Text))
-                    {
-                        counteragent.AddCounteragent(TxtSurname.Text, TxtName.Text, TxtMiddleName.Text, TxtInn.Text, TxtAdress.Text, TxtPhone.Text, RoleId);
-                        this.Close();
-                    }
-                    else { MessageBox.Show("Такой пользователь уже сущесвует!"); }
+                    counteragent.AddCounteragent(TxtSurname.Text, TxtName.Text, TxtMiddleName.Text, TxtInn.Text, TxtAdress.Text, TxtPhone.Text, RoleId);
+                    this.Close();
+                
                 }
                 else //Редактирование пользователя
                 {

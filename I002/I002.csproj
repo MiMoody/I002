@@ -47,7 +47,31 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CheckSimbol.cs" />
+    <Compile Include="ForPurchase\CompositionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForPurchase\CompositionForm.Designer.cs">
+      <DependentUpon>CompositionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EntityReport.cs" />
+    <Compile Include="ForProductOnStorage\FormDialogProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForProductOnStorage\FormDialogProduct.Designer.cs">
+      <DependentUpon>FormDialogProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForProductOnStorage\FormDialogCounteragent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForProductOnStorage\FormDialogCounteragent.Designer.cs">
+      <DependentUpon>FormDialogCounteragent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForProductOnStorage\SellProductDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForProductOnStorage\SellProductDialog.Designer.cs">
+      <DependentUpon>SellProductDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="ForPurchase\FormPurchase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +142,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ForCounteragent\Counteragent.resx">
       <DependentUpon>Counteragent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForProductOnStorage\FormDialogProduct.resx">
+      <DependentUpon>FormDialogProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForProductOnStorage\FormDialogCounteragent.resx">
+      <DependentUpon>FormDialogCounteragent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForProductOnStorage\SellProductDialog.resx">
+      <DependentUpon>SellProductDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForPurchase\CompositionForm.resx">
+      <DependentUpon>CompositionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ForPurchase\FormPurchase.resx">
       <DependentUpon>FormPurchase.cs</DependentUpon>

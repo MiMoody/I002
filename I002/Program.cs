@@ -10,7 +10,10 @@ namespace I002
     {
         /// <summary>
         /// Главная точка входа для приложения.
-        /// </summary>
+        /// </summary>\
+        public static BuyProduct DialogProduct;
+        public static SellProductForm DialogCounteragent;
+
         [STAThread]
         static void Main()
         {

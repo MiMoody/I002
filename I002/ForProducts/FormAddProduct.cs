@@ -28,7 +28,6 @@ namespace I002
             {
                 EntityProduct product = new EntityProduct();
                 product.AddProduct(TxtAddProduct.Text);
-                MessageBox.Show("Продукт успешно добавлен!");
                 this.Close();
             }
             else

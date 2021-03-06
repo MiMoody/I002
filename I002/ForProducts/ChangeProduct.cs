@@ -13,10 +13,11 @@ namespace I002
     public partial class ChangeProduct : Form
     {
         string IdProduct = null;
-        public ChangeProduct(string Id)
+        public ChangeProduct(string Id,string NameProduct)
         {
             InitializeComponent();
             IdProduct = Id;
+            TxtAddProduct.Text = NameProduct;
         }
 
         private void BtnClose_Click(object sender, EventArgs e)

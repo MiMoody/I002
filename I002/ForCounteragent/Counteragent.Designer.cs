@@ -29,14 +29,14 @@ namespace I002
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.radioBuyer = new System.Windows.Forms.RadioButton();
+            this.radioProvider = new System.Windows.Forms.RadioButton();
             this.labShow = new System.Windows.Forms.Label();
-            this.checkBuyer = new System.Windows.Forms.CheckBox();
-            this.checkProvider = new System.Windows.Forms.CheckBox();
             this.BtnChange = new System.Windows.Forms.Button();
             this.BtnDelete = new System.Windows.Forms.Button();
             this.LabFind = new System.Windows.Forms.Label();
@@ -44,15 +44,17 @@ namespace I002
             this.tableForCounteragents = new System.Windows.Forms.DataGridView();
             this.BtnAdd = new System.Windows.Forms.Button();
             this.BtnClose = new System.Windows.Forms.Button();
+            this.CloseBtn = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableForCounteragents)).BeginInit();
             this.SuspendLayout();
             // 
             // MainPanel
             // 
+            this.MainPanel.Controls.Add(this.CloseBtn);
+            this.MainPanel.Controls.Add(this.radioBuyer);
+            this.MainPanel.Controls.Add(this.radioProvider);
             this.MainPanel.Controls.Add(this.labShow);
-            this.MainPanel.Controls.Add(this.checkBuyer);
-            this.MainPanel.Controls.Add(this.checkProvider);
             this.MainPanel.Controls.Add(this.BtnChange);
             this.MainPanel.Controls.Add(this.BtnDelete);
             this.MainPanel.Controls.Add(this.LabFind);
@@ -60,6 +62,7 @@ namespace I002
             this.MainPanel.Controls.Add(this.tableForCounteragents);
             this.MainPanel.Controls.Add(this.BtnAdd);
             this.MainPanel.Controls.Add(this.BtnClose);
+            this.MainPanel.Cursor = System.Windows.Forms.Cursors.Default;
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
@@ -67,6 +70,32 @@ namespace I002
             this.MainPanel.Size = new System.Drawing.Size(1050, 553);
             this.MainPanel.TabIndex = 2;
             this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
+            // 
+            // radioBuyer
+            // 
+            this.radioBuyer.AutoSize = true;
+            this.radioBuyer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioBuyer.Location = new System.Drawing.Point(305, 415);
+            this.radioBuyer.Name = "radioBuyer";
+            this.radioBuyer.Size = new System.Drawing.Size(146, 29);
+            this.radioBuyer.TabIndex = 13;
+            this.radioBuyer.Text = "Покупателей";
+            this.radioBuyer.UseVisualStyleBackColor = true;
+            this.radioBuyer.Click += new System.EventHandler(this.radioBuyer_Click);
+            // 
+            // radioProvider
+            // 
+            this.radioProvider.AutoSize = true;
+            this.radioProvider.Checked = true;
+            this.radioProvider.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioProvider.Location = new System.Drawing.Point(138, 415);
+            this.radioProvider.Name = "radioProvider";
+            this.radioProvider.Size = new System.Drawing.Size(152, 29);
+            this.radioProvider.TabIndex = 12;
+            this.radioProvider.TabStop = true;
+            this.radioProvider.Text = "Поставщиков";
+            this.radioProvider.UseVisualStyleBackColor = true;
+            this.radioProvider.Click += new System.EventHandler(this.radioProvider_Click);
             // 
             // labShow
             // 
@@ -76,36 +105,6 @@ namespace I002
             this.labShow.Size = new System.Drawing.Size(99, 25);
             this.labShow.TabIndex = 11;
             this.labShow.Text = "Показать:";
-            // 
-            // checkBuyer
-            // 
-            this.checkBuyer.AutoCheck = false;
-            this.checkBuyer.AutoSize = true;
-            this.checkBuyer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBuyer.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.checkBuyer.Location = new System.Drawing.Point(304, 417);
-            this.checkBuyer.Name = "checkBuyer";
-            this.checkBuyer.Size = new System.Drawing.Size(153, 30);
-            this.checkBuyer.TabIndex = 10;
-            this.checkBuyer.Text = "Покупателей";
-            this.checkBuyer.UseVisualStyleBackColor = true;
-            this.checkBuyer.Click += new System.EventHandler(this.checkBuyer_Click);
-            // 
-            // checkProvider
-            // 
-            this.checkProvider.AutoCheck = false;
-            this.checkProvider.AutoSize = true;
-            this.checkProvider.Checked = true;
-            this.checkProvider.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkProvider.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkProvider.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.checkProvider.Location = new System.Drawing.Point(145, 417);
-            this.checkProvider.Name = "checkProvider";
-            this.checkProvider.Size = new System.Drawing.Size(159, 30);
-            this.checkProvider.TabIndex = 9;
-            this.checkProvider.Text = "Поставщиков";
-            this.checkProvider.UseVisualStyleBackColor = true;
-            this.checkProvider.Click += new System.EventHandler(this.checkProvider_Click);
             // 
             // BtnChange
             // 
@@ -158,21 +157,21 @@ namespace I002
             // 
             this.tableForCounteragents.AllowUserToAddRows = false;
             this.tableForCounteragents.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.tableForCounteragents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.tableForCounteragents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.tableForCounteragents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tableForCounteragents.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.tableForCounteragents.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableForCounteragents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableForCounteragents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.tableForCounteragents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableForCounteragents.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tableForCounteragents.Location = new System.Drawing.Point(28, 130);
@@ -180,19 +179,19 @@ namespace I002
             this.tableForCounteragents.Name = "tableForCounteragents";
             this.tableForCounteragents.ReadOnly = true;
             this.tableForCounteragents.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableForCounteragents.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableForCounteragents.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.tableForCounteragents.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.tableForCounteragents.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            this.tableForCounteragents.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.tableForCounteragents.RowTemplate.Height = 35;
             this.tableForCounteragents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tableForCounteragents.Size = new System.Drawing.Size(988, 272);
@@ -229,6 +228,22 @@ namespace I002
             this.BtnClose.UseVisualStyleBackColor = true;
             this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
+            // CloseBtn
+            // 
+            this.CloseBtn.BackgroundImage = global::I002.Properties.Resources.close;
+            this.CloseBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.CloseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CloseBtn.FlatAppearance.BorderSize = 0;
+            this.CloseBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.CloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseBtn.ForeColor = System.Drawing.Color.Black;
+            this.CloseBtn.Location = new System.Drawing.Point(1001, 12);
+            this.CloseBtn.Name = "CloseBtn";
+            this.CloseBtn.Size = new System.Drawing.Size(37, 38);
+            this.CloseBtn.TabIndex = 14;
+            this.CloseBtn.UseVisualStyleBackColor = true;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            // 
             // Counteragent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,7 +274,8 @@ namespace I002
         private System.Windows.Forms.Button BtnAdd;
         private System.Windows.Forms.Button BtnClose;
         private System.Windows.Forms.Label labShow;
-        private System.Windows.Forms.CheckBox checkBuyer;
-        private System.Windows.Forms.CheckBox checkProvider;
+        private System.Windows.Forms.RadioButton radioBuyer;
+        private System.Windows.Forms.RadioButton radioProvider;
+        private System.Windows.Forms.Button CloseBtn;
     }
 }

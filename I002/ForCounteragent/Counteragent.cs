@@ -35,24 +35,6 @@ namespace I002
             counteragent.ReadCounteragent(tableForCounteragents, RoleId);
         }
 
-        private void checkProvider_Click(object sender, EventArgs e)
-        {
-            checkProvider.Checked = true;
-            checkBuyer.Checked = false;
-            RoleId = 1;
-            EntityCounteragent counteragent = new EntityCounteragent();
-            counteragent.ReadCounteragent(tableForCounteragents, RoleId);
-        }
-
-        private void checkBuyer_Click(object sender, EventArgs e)
-        {
-            checkBuyer.Checked = true;
-            checkProvider.Checked = false;
-            RoleId = 2;
-            EntityCounteragent counteragent = new EntityCounteragent();
-            counteragent.ReadCounteragent(tableForCounteragents, RoleId);
-        }
-
         private void BtnDelete_Click(object sender, EventArgs e)
         {
             if (IdCounteragent != null)
@@ -74,6 +56,30 @@ namespace I002
             {
                 MessageBox.Show("Вы не выбрали контрагента для удаления!\n\nНажмите на соответствующую запись в таблице");
             }
+        }
+
+        private void radioProvider_Click(object sender, EventArgs e)
+        {
+            radioProvider.Checked = true;
+            radioBuyer.Checked = false;
+            RoleId = 1;
+            EntityCounteragent counteragent = new EntityCounteragent();
+            counteragent.ReadCounteragent(tableForCounteragents, RoleId);
+        }
+
+
+        private void radioBuyer_Click(object sender, EventArgs e)
+        {
+            radioBuyer.Checked = true;
+            radioProvider.Checked = false;
+            RoleId = 2;
+            EntityCounteragent counteragent = new EntityCounteragent();
+            counteragent.ReadCounteragent(tableForCounteragents, RoleId);
+        }
+
+        private void CloseBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void TxtFind_TextChanged(object sender, EventArgs e)

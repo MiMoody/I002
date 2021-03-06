@@ -12,7 +12,7 @@ namespace I002
 {
     public partial class Products : Form
     {
-        string IDProduct = null;
+        string IDProduct = null,NameProduct;
         public Products()
         {
             InitializeComponent();
@@ -51,7 +51,7 @@ namespace I002
         {
             if(IDProduct!=null)
             {
-                ChangeProduct changeProduct = new ChangeProduct(IDProduct);
+                ChangeProduct changeProduct = new ChangeProduct(IDProduct,NameProduct);
                 changeProduct.ShowDialog();
                 EntityProduct product = new EntityProduct();
                 product.ReadProduct(tableForProducts);
@@ -69,12 +69,18 @@ namespace I002
             try
             {
                 IDProduct = tableForProducts[0, e.RowIndex].Value.ToString();
+                NameProduct = tableForProducts[1, e.RowIndex].Value.ToString();
             }
             catch
             {
                 tableForProducts.ClearSelection();
                 IDProduct = null;
             }
+        }
+
+        private void CloseBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)

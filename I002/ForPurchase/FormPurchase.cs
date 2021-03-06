@@ -12,18 +12,19 @@ namespace I002
 {
     public partial class FormPurchase : Form
     {
-        int Action;
+        int Role;
         public FormPurchase(int action)
         {
             InitializeComponent();
-            Action = action;
-            if (Action == 2) this.Text = "Отчёт о продажах";
-            else this.Text = "Отчёт о покупках";
+            Role = action;
+            if (Role == 2) this.Text = "Отчёт о продажах";
+            else this.Text = "Отчёт о закупках";
+            LabHeader.Text = this.Text;
         }
 
         private void FormPurchase_Load(object sender, EventArgs e)
         {
-            if(Action==1)
+            if(Role == 1)
             {
                 EntityReport entityReport = new EntityReport();
                 entityReport.MadeReportComing(tableForReport);
@@ -39,6 +40,18 @@ namespace I002
         private void BtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tableForReport_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string Id = tableForReport[0, e.RowIndex].Value.ToString();
+            CompositionForm compositionForm = new CompositionForm(Role, Id);
+            compositionForm.ShowDialog();
+        }
+
+        private void CloseBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

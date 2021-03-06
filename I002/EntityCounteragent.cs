@@ -66,8 +66,17 @@ namespace I002
                     AddProduct.Parameters.AddWithValue(@"Phone", Phone);
                     AddProduct.Parameters.AddWithValue(@"RoleId", RoleId);
                     AddProduct.Parameters.AddWithValue(@"Rem", 0);
-                    AddProduct.ExecuteNonQuery();
-                    MessageBox.Show("Запись успешно добавлена!");
+                    try
+                    {
+                        AddProduct.ExecuteNonQuery();
+                        MessageBox.Show("Запись успешно добавлена!");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Такой пользователь уже существует!");
+                    }
+                  
+                  
                 }
                 catch (Exception ex)
                 {
@@ -168,32 +177,6 @@ namespace I002
                 {
                     conn.Close();
                 }
-            }
-        }
-
-        public bool CheckExist(string Inn)
-        {
-            bool result = false;
-            using (SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=I002;User ID=student;Password=Passw0rd"))
-            {
-                try
-                {
-                    conn.Open();
-                    string query = "SELECT [IdСounteragent] FROM [Сounteragent] WHERE  [INN] = @Inn";
-                    SqlCommand SelectInn = new SqlCommand(query, conn);
-                    SelectInn.Parameters.AddWithValue(@"Inn", Inn);
-                    if (SelectInn.ExecuteScalar() != null) result = true;
-                    else result = false;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-                finally
-                {
-                    conn.Close();
-                }
-                return result;
             }
         }
 

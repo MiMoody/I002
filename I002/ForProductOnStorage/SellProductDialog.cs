@@ -35,7 +35,7 @@ namespace I002.ForProductOnStorage
                 IDProduct = tableForProducts[1, e.RowIndex].Value.ToString();
                 NameProduct = tableForProducts[2, e.RowIndex].Value.ToString();
                 TxtQuantity.Maximum = Convert.ToInt32(tableForProducts[3, e.RowIndex].Value);
-                TxtPrice.Text = tableForProducts[4, e.RowIndex].Value.ToString();
+                TxtPrice.Text = (Convert.ToDouble(tableForProducts[4, e.RowIndex].Value)+Convert.ToDouble(tableForProducts[4, e.RowIndex].Value) * 0.05).ToString();
 
             }
             catch { IDProduct = null; }

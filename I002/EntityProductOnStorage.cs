@@ -80,34 +80,39 @@ namespace I002
                         if (CheckProductOnStorage(tableForProduct[0, i].Value.ToString()))
                         {
                             double Price = Convert.ToDouble(tableForProduct[2, i].Value);
-                            Price += (Convert.ToDouble(tableForProduct[2, i].Value) * 0.05);
+                            //Price += (Convert.ToDouble(tableForProduct[2, i].Value) * 0.05);
                             int Quantity = Convert.ToInt32(tableForProduct[3, i].Value);
                             string selectQuantityOnStorage = "SELECT Quantity FROM ProductOnStorage WHERE IdProduct = @IdProduct";
+                            string selectPriceOnStorage = "SELECT Price FROM ProductOnStorage WHERE IdProduct = @IdProduct";
                             SqlCommand SelectQuantityOnStorage = new SqlCommand(selectQuantityOnStorage, conn);
+                            SqlCommand SelectPriceOnStorage = new SqlCommand(selectPriceOnStorage, conn);
                             SelectQuantityOnStorage.Parameters.AddWithValue(@"IdProduct", tableForProduct[0, i].Value.ToString());
+                            SelectPriceOnStorage.Parameters.AddWithValue(@"IdProduct", tableForProduct[0, i].Value.ToString());
                             int QuantityOnStorage = Convert.ToInt32(SelectQuantityOnStorage.ExecuteScalar());
-                            QuantityOnStorage += Quantity;
+                            double PriceOnStorage = Convert.ToDouble(SelectPriceOnStorage.ExecuteScalar());
+                            int NewQuantity = QuantityOnStorage + Quantity;
+                            double NewPrice = (QuantityOnStorage * PriceOnStorage + Quantity * Price) / NewQuantity;
                             string insertProductOnStorage = "Update ProductOnStorage set Quantity = @Quantity, Price = @Price WHERE IdProduct = @IdProduct ";
                             SqlCommand InsertProductOnStorage = new SqlCommand(insertProductOnStorage, conn);
                             InsertProductOnStorage.Parameters.AddWithValue(@"IdProduct", tableForProduct[0, i].Value.ToString());
-                            InsertProductOnStorage.Parameters.AddWithValue(@"Quantity", QuantityOnStorage);
-                            InsertProductOnStorage.Parameters.AddWithValue(@"Price", Price);
+                            InsertProductOnStorage.Parameters.AddWithValue(@"Quantity", NewQuantity);
+                            InsertProductOnStorage.Parameters.AddWithValue(@"Price", NewPrice);
                             InsertProductOnStorage.ExecuteNonQuery();
-                            
+
                         }
                         else
                         {
                             double Price = Convert.ToDouble(tableForProduct[2, i].Value);
-                            Price += Convert.ToDouble(tableForProduct[2, i].Value) * 0.05;
+                            // Price += Convert.ToDouble(tableForProduct[2, i].Value) * 0.05;
                             string insertProductOnStorage = "INSERT INTO ProductOnStorage values(@IdProduct,@Quantity,@Price)";
                             SqlCommand InsertProductOnStorage = new SqlCommand(insertProductOnStorage, conn);
                             InsertProductOnStorage.Parameters.AddWithValue(@"IdProduct", tableForProduct[0, i].Value.ToString());
                             InsertProductOnStorage.Parameters.AddWithValue(@"Quantity", tableForProduct[3, i].Value.ToString());
                             InsertProductOnStorage.Parameters.AddWithValue(@"Price", Price);
                             InsertProductOnStorage.ExecuteNonQuery();
-                            
+
                         }
-                        
+
                     }
                     MessageBox.Show("Товар успешно закуплен!");
 
